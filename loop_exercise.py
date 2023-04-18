@@ -139,3 +139,126 @@
 # # print(list_str)
 # print(list_str)
 
+# v1 = 675
+# v1 = bin(v1)
+# print(v1)
+# v2 = "0b11000101" # 请将二进制v2转换为十进制（整型）
+# v2 = int(v2,base=2)
+# print(v2)
+# v3 = "11000101"   # 请将二进制v3转换为十进制（整型）
+# v3 = int(v3,base=2)
+# print(v3)
+
+# v1 =123
+# v2 = 456
+# v1 = bin(v1)
+# v2 = bin(v2)
+# print(v1+v2)
+# v1 = v1.rsplit('b')
+# v1 = v1[1]
+# v2 = v2.rsplit('b')
+# v2 = v2[1]
+# print(v1)
+# print(v2)
+# sum = v1+v2
+# print(sum)
+# print(type(sum))
+# # bin(sum)
+# sum = int(sum,base = 2)
+# print(sum)
+
+# v1 = 123
+# v2 = 456
+# v1 = bin(v1)
+# v2 = bin(v2)
+# v1 = v1.split('b')
+# v2 = v2.split('b')
+# v1 = v1[1]
+# v2 = v2[1]
+# v1 = v1.zfill(16)
+# v2 = v2.zfill(16)
+# sum = v1+ v2
+# sum = int(sum,base = 2)
+# print(sum)
+
+# your_str = input("please enter")
+# your_str = your_str.replace("苍老师","***")
+# print(your_str)
+
+# name = "aleX leNb "
+# name = name.strip()
+# print(name)
+# if name.startswith('al'):
+#     print("yes")
+# if name.endswith('Nb'):
+#     print("yes")
+# name1 = name.replace('l','p')
+# print(name1)
+# name2 = name.split('l')
+# print(name2)
+# name3 = name.rsplit('l',1)
+# print(name3)
+# name4 = name.upper()
+# print(name4)
+
+# s = "123a4b5c"
+# s1 = s[0:3]
+# print(s1)
+# s2 = s[3:6]
+# print(s2)
+# s3 = s[-1]
+# print(s3)
+# s4 = s[5::-2]
+# print(s4)
+
+# message = "伤情最是晚凉天，憔悴厮人不堪言"
+# i = 0
+# while i<len(message):
+#     print(message[i])
+#     i+=1
+
+# message = "伤情最是晚凉天，憔悴厮人不堪言"
+# i=0
+# for i in range(0,len(message)):
+#     print(message[i])
+#     i+=1
+# message = "伤情最是晚凉天，憔悴厮人不堪言"
+# i=len(message)-1
+# print(message[i])
+# print("*****************")
+# # print(len(message))
+# # print(message[i])
+# for i in range(len(message)):
+#     print(i)
+#     print(message[i])
+#     i+=1
+#     print(i)
+"""
+要求：
+	将num1中的的所有数字找到并拼接起来：1232312
+	将num1中的的所有数字找到并拼接起来：1218323
+	然后将两个数字进行相加。
+"""
+num1 = input("请输入：") # asdfd123sf2312
+num2 = input("请输入：") # a12dfd183sf23
+# 请补充代码
+len_num1 = len(num1)
+len_num2 = len(num2)
+char = 0
+str_num1 = ""
+str_num2 = ""
+for char in range(len_num1):
+    if num1[char].isdecimal():
+        str_num1=str_num1+num1[char]
+        # print(str_num1)
+    char+=1
+print(str_num1)
+for char in range(len_num2):
+    if num2[char].isdecimal():
+        str_num2=str_num2+num2[char]
+        # print(str_num1)
+    char+=1
+print(str_num2)
+int_num1 = int(str_num1)
+int_num2 = int(str_num2)
+print(int_num1+int_num2)
