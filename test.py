@@ -6,12 +6,8 @@
 #         print("break")
 #         break
 #     enter_list.append(your_input)
-# for element in enter_list:
-#     print(element)
-#     enter_str = '_'.join(element)
-#     print(element)
-# print(enter_list)
-# print(enter_str)
+# result = '_'.join(enter_list)
+# print(result)
 
 
 # 如 10.3.9.12 转换规则为：
@@ -22,7 +18,7 @@
 # 再将以上二进制拼接起来，然后再进行一次翻转。
 #
 # 最终将翻转之后的二进制转换为整型。
-#
+
 # num_int_list = [10,3,9,12]
 # num_t_list = []
 # t_num = ''
@@ -33,22 +29,37 @@
 #     i = i[1]
 #     i = i.zfill(8)
 #     num_t_list.append(i)
-#     print(i)
+#     # print(i)
 # for j in num_t_list:
 #     t_num = j+t_num
 # print(t_num)
-# k = len(t_num)
-# for k in range(len(t_num),0,-1):
-#
-# # re_t_num = t_num.
-# print(num_t_list)
+# r_num = t_num[::-1]
+# print(r_num)
+# bin_num = int(r_num,base = 2)
+# print(bin_num)
 
 
 
-#
+
+
 # car_list = ['鲁A32444', '沪B12333', '京B8989M', '京C49678', '黑C46555', '晋B25041', '沪C34567']
 #
-# # 根据以上代码获取各省车牌数量，例如：info = {"沪":2,"京":2 ...}
+# info = dict()
+# for car_num in car_list:
+#     city = car_num[0]
+#     if city in info:
+#         info[city] = info[city] + 1
+#     else:
+#         info.setdefault(city,1)
+# print(info)
+
+# for car_num in car_list:
+#     city = car_num[0]
+#     car_many = info.get(city,0)
+#     info[city] = car_many + 1
+# print(info)
+
+# 根据以上代码获取各省车牌数量，例如：info = {"沪":2,"京":2 ...}
 # info = dict()
 # h = 0
 # j = 0
@@ -87,35 +98,44 @@ text = """ id,name,age,phone,job
             2,wusir,23,13304320533,Tearcher
             3,老男孩,18,1333235322,IT"""
 
-# 将上述数据处理为如下格式的结果：
-#    info = [{'id':'1','name':'alex','age':'22','phone':'13651054608','job':'IT'},.... ..]
-# 提示：text的内容是根据 \n 分割（\n表示回车换行）。
 # print(text)
-# text = text.split()
-# info = []
-# user_dict = dict()
-# the_dict = dict()
-# # print(text)
-# str_list = []
-# for str_1 in text:
-#     str_1 = str_1.split(',')
-#     str_list.append(str_1)
-#     # print(str_1)
-# for i in range(1,len(str_list)):
-#     name_i = str(i)
-#     name = "dict_" + name_i
-#     name = dict()
-#     # print(name)
-#     for j in range(0,4):
-#
-#         name.setdefault(str_list[0][j],str_list[i][j])
-#         # the_dict[str_list[0][j]] = str_list[i][j]
-#         # print(str_list[i][j])
-#     info.append(name)
-#     # print(the_dict)
-# # print(str_list)
-# print(info)
-# print(info)
+# text_list = text.split("\n")
+# for value in text_list:
+#     value = value.strip()
+#     print(value)
+# 将上述数据处理为如下格式的结果：
+# info = [{'id':'1','name':'alex','age':'22','phone':'13651054608','job':'IT'},.... ..]
+# 提示：text的内容是根据 \n 分割（\n表示回车换行）。
+print(text)
+text = text.split()
+info = []
+user_dict = dict()
+the_dict = dict()
+# print(text)
+str_list = []
+for str_1 in text:
+    str_1 = str_1.split(',')
+    str_list.append(str_1)
+    print(str_1)
+for i in range(1,len(str_list)):
+    name_i = str(i)
+    # name = "dict_" + name_i
+    name = dict()
+    # print(name)
+    for j in range(0,4):
+        name.setdefault(str_list[0][j],str_list[i][j])
+        # the_dict[str_list[0][j]] = str_list[i][j]
+        # print(str_list[i][j])
+    info.append(name)
+    # print(the_dict)
+# print(str_list)
+print(info)
+print(info)
+
+
+
+
+
 
 
 # content = input("请输入内容:") # 用户可能输入 5*9*99.... 或 5* 9 * 10 * 99 或 5 * 9 * 99...
@@ -204,100 +224,100 @@ text = """ id,name,age,phone,job
 #
 # print("抽完之后，剩下的牌为：", total_poke_list)
 
-
-import random
-
-# 代码示例：（请补充实现）
-total_poke_list = []
-card = []
-result = {}
-user_list = ["alex","武沛齐","李路飞"]
-color_list = ["红桃", "黑桃", "方片", "梅花"]
-big_king = ('大王', 15*0.5)
-small_king = ('小王', 14*0.5)
-
-for color in color_list:
-    for i in range(1,14):
-        card.append(color)
-        if i>10:
-            i = i*0.5
-        card.append(i)
-        card_tuple = tuple(card)
-        # print(card_tuple)
-        total_poke_list.append(card_tuple)
-        card.clear()
-# 补充代码
-total_poke_list.append(big_king)
-total_poke_list.append(small_king)
-print(total_poke_list)
-for name in user_list:
-    first_num = random.randint(0,len(total_poke_list)+1)
-    first_card = total_poke_list[first_num]
-    result.setdefault(name,first_card[1])
-    total_poke_list.pop(first_num)
-print(result)
-while True:
-    alex_choose = input("please alex enter y or n")
-    if alex_choose == 'n':
-        print("alex choose skip")
-        pass
-    elif alex_choose == 'y':
-        alex_new_num = random.randint(0,len(total_poke_list)-1)
-        alex_new_card = total_poke_list[alex_new_num][1]
-        # print(alex_new_card)
-        new_num = int(alex_new_card) + int(result['alex'])
-        # print(new_num)
-        if new_num > 11:
-            print("alex boom")
-            new_num = 0
-        result.update({'alex': new_num})
-        # print(alex_new_card)
-        print(result['alex'])
-        total_poke_list.pop(alex_new_num)
-    # wupeiq_choose = input("please enter y or n")
-    # if wupeiq_choose == 'n':
-    #     print("wupeiqi choose skip")
-    #     pass
-
-    wu_choose = input("please wu_choose enter y or n")
-    if wu_choose == 'n':
-        print("wu_choose choose skip")
-        pass
-    elif wu_choose == 'y':
-        wu_new_num = random.randint(0,len(total_poke_list)-1)
-        wu_new_card = total_poke_list[wu_new_num][1]
-        # print(wu_new_card)
-        new_num = int(wu_new_card) + int(result['武沛齐'])
-        # print("wu"+str(new_num))
-        if new_num > 11:
-            print("wu boom")
-            new_num = 0
-        result.update({'武沛齐': new_num})
-        # print(wu_new_card)
-        print(result['武沛齐'])
-    total_poke_list.pop(wu_new_num)
-
-
-
-    li_choose = input("please wu_choose enter y or n")
-    if li_choose == 'n':
-        print("li_choose choose skip")
-        pass
-    elif li_choose == 'y':
-        li_new_num = random.randint(0, len(total_poke_list)-1)
-        li_new_card = total_poke_list[li_new_num][1]
-        # print(li_new_card)
-        new_num = int(li_new_card) + int(result['李路飞'])
-        # print("li" + str(new_num))
-        if new_num > 11:
-            print("li boom")
-            new_num = 0
-        result.update({'李路飞': new_num})
-        # print(li_new_card)
-        print(result['李路飞'])
-    total_poke_list.pop(li_new_num)
-
-    if len(total_poke_list) == 0:
-        print("end")
-        break
-    print("len : "+str(len(total_poke_list)))
+#
+# import random
+#
+# # 代码示例：（请补充实现）
+# total_poke_list = []
+# card = []
+# result = {}
+# user_list = ["alex","武沛齐","李路飞"]
+# color_list = ["红桃", "黑桃", "方片", "梅花"]
+# big_king = ('大王', 15*0.5)
+# small_king = ('小王', 14*0.5)
+#
+# for color in color_list:
+#     for i in range(1,14):
+#         card.append(color)
+#         if i>10:
+#             i = i*0.5
+#         card.append(i)
+#         card_tuple = tuple(card)
+#         # print(card_tuple)
+#         total_poke_list.append(card_tuple)
+#         card.clear()
+# # 补充代码
+# total_poke_list.append(big_king)
+# total_poke_list.append(small_king)
+# print(total_poke_list)
+# for name in user_list:
+#     first_num = random.randint(0,len(total_poke_list)+1)
+#     first_card = total_poke_list[first_num]
+#     result.setdefault(name,first_card[1])
+#     total_poke_list.pop(first_num)
+# print(result)
+# while True:
+#     alex_choose = input("please alex enter y or n")
+#     if alex_choose == 'n':
+#         print("alex choose skip")
+#         pass
+#     elif alex_choose == 'y':
+#         alex_new_num = random.randint(0,len(total_poke_list)-1)
+#         alex_new_card = total_poke_list[alex_new_num][1]
+#         # print(alex_new_card)
+#         new_num = int(alex_new_card) + int(result['alex'])
+#         # print(new_num)
+#         if new_num > 11:
+#             print("alex boom")
+#             new_num = 0
+#         result.update({'alex': new_num})
+#         # print(alex_new_card)
+#         print(result['alex'])
+#         total_poke_list.pop(alex_new_num)
+#     # wupeiq_choose = input("please enter y or n")
+#     # if wupeiq_choose == 'n':
+#     #     print("wupeiqi choose skip")
+#     #     pass
+#
+#     wu_choose = input("please wu_choose enter y or n")
+#     if wu_choose == 'n':
+#         print("wu_choose choose skip")
+#         pass
+#     elif wu_choose == 'y':
+#         wu_new_num = random.randint(0,len(total_poke_list)-1)
+#         wu_new_card = total_poke_list[wu_new_num][1]
+#         # print(wu_new_card)
+#         new_num = int(wu_new_card) + int(result['武沛齐'])
+#         # print("wu"+str(new_num))
+#         if new_num > 11:
+#             print("wu boom")
+#             new_num = 0
+#         result.update({'武沛齐': new_num})
+#         # print(wu_new_card)
+#         print(result['武沛齐'])
+#     total_poke_list.pop(wu_new_num)
+#
+#
+#
+#     li_choose = input("please wu_choose enter y or n")
+#     if li_choose == 'n':
+#         print("li_choose choose skip")
+#         pass
+#     elif li_choose == 'y':
+#         li_new_num = random.randint(0, len(total_poke_list)-1)
+#         li_new_card = total_poke_list[li_new_num][1]
+#         # print(li_new_card)
+#         new_num = int(li_new_card) + int(result['李路飞'])
+#         # print("li" + str(new_num))
+#         if new_num > 11:
+#             print("li boom")
+#             new_num = 0
+#         result.update({'李路飞': new_num})
+#         # print(li_new_card)
+#         print(result['李路飞'])
+#     total_poke_list.pop(li_new_num)
+#
+#     if len(total_poke_list) == 0:
+#         print("end")
+#         break
+#     print("len : "+str(len(total_poke_list)))
