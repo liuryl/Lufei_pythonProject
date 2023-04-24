@@ -1,0 +1,6 @@
+<family>
+    <son name="son_1">
+        <age name="grand_son1">grandsonson</age>
+    </son>
+    <son name="son_2"/>
+</family>

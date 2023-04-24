@@ -1,0 +1,7 @@
+<family>
+    <son name="son_2"/>
+    <son name="son_1">
+        <grandson name="grand_son_1"/>
+        <grandson name="grand_son_2"/>
+    </son>
+</family>
