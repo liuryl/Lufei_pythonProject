@@ -1,0 +1,25 @@
+{
+  "book_name": "\u5b89\u5f92\u751f",
+  "author": "li",
+  "isborrow": "0",
+  "bookID": 8705,
+  "category": "\u7ae5\u8bdd"
+}{
+  "book_name": "\u4f0a\u7d22\u5bd3\u8a00",
+  "author": "li",
+  "isborrow": "0",
+  "bookID": 6063,
+  "category": "\u7ae5\u8bdd"
+}{
+  "book_name": "python",
+  "author": "li",
+  "isborrow": "0",
+  "bookID": 1256,
+  "category": "learn"
+}{
+  "book_name": "java",
+  "author": "li",
+  "isborrow": "0",
+  "bookID": 8272,
+  "category": "learn"
+}
